@@ -36,16 +36,17 @@ K35=1*0.8*1*0.5*0.4;
 K45=1*0.8*1*0.5*0.04;
 K5=(v(:,2).*K15+v(:,3).*K25+v(:,4).*K35+v(:,5).*K45)./(v(:,1)+(v(:,2)+v(:,3)+v(:,4)+v(:,5)));
 KX5=K5.*v(:,1);
-plot(tspan,KX5,'-s','MarkerIndices',1:5:length(KX5));
+plot(tspan,KX5,'-sb','MarkerIndices',1:5:length(KX5),'LineWidth',1.05);
 hold on;
-plot(tspan,KX4,'-o','MarkerIndices',1:5:length(KX4));
+plot(tspan,KX4,'-or','MarkerIndices',1:5:length(KX4),'LineWidth',1.05);
 hold on;
-plot(tspan,KX,'-*','MarkerIndices',1:5:length(KX));
+plot(tspan,KX,'-*g','MarkerIndices',1:5:length(KX),'LineWidth',1.05);
 hold on;
-plot(tspan,KX2,'-+','MarkerIndices',1:5:length(KX2));
+plot(tspan,KX2,'-+m','MarkerIndices',1:5:length(KX2),'LineWidth',1.05);
 hold on;
-plot(tspan,KX3,'-d','MarkerIndices',1:5:length(KX3));
+plot(tspan,KX3,'-dk','MarkerIndices',1:5:length(KX3),'LineWidth',1.05);
 xlabel('year'); ylabel('Number(KX)');
+yline(1000:1000:9000,':')
 legend('Current Situation', 'Scenario 3', 'Scenario 4-1', 'Scenario 4-2', 'Scenario 4-3');
 hold off;
 
@@ -55,16 +56,18 @@ Y3=w(:,5)+w(:,2)+w(:,3)+w(:,4);
 Y4=b(:,5)+b(:,2)+b(:,3)+b(:,4);
 Y5=v(:,5)+v(:,2)+v(:,3)+v(:,4);
 figure(2); hold on;
-plot(tspan,Y5,'-s','MarkerIndices',1:5:length(Y5));
+plot(tspan,Y5,'-sb','MarkerIndices',1:5:length(Y5),'LineWidth',1.05);
 hold on;
-plot(tspan,Y4,'-o','MarkerIndices',1:5:length(Y4));
+plot(tspan,Y4,'-or','MarkerIndices',1:5:length(Y4),'LineWidth',1.05);
 hold on;
-plot(tspan,Y,'-*','MarkerIndices',1:5:length(Y));
+plot(tspan,Y,'-*g','MarkerIndices',1:5:length(Y),'LineWidth',1.05);
 hold on;
-plot(tspan,Y2,'-+','MarkerIndices',1:5:length(Y2));
+plot(tspan,Y2,'-+m','MarkerIndices',1:5:length(Y2),'LineWidth',1.05);
 hold on;
-plot(tspan,Y3,'-d','MarkerIndices',1:5:length(Y3));
+plot(tspan,Y3,'-dk','MarkerIndices',1:5:length(Y3),'LineWidth',1.05);
 xlabel('year'); ylabel('Number(Y1-4)');
+ylim([0,7e4]);
+yline(0:10000:70000,':')
 legend('Current Situation','Scenario 3','Scenario 4-1', 'Scenario 4-2', 'Scenario 4-3' );
 hold off;
 
